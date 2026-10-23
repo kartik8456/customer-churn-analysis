@@ -99,9 +99,13 @@ Possible analysis areas, depending on the work completed, include:
 
 ## Dashboard
 
+
 ![Dashboard Overview](dashboard/screenshots/overview.png)
+
 ![Customer Behaviour](dashboard/screenshots/customer-behaviour.png)
+
 ![Financial Impact](dashboard/screenshots/financial-impact.png)
+
 
 Remove any image line for a screenshot you do not have, and ensure the file names match your repository.
 

@@ -107,48 +107,30 @@ Possible analysis areas, depending on the work completed, include:
 ![Financial Impact](dashboard/screenshots/financial-impact.png)
 
 
-Remove any image line for a screenshot you do not have, and ensure the file names match your repository.
 
 ## Key Findings
 
-Add verified results from your analysis here. Examples of what to report:
+- **Overall churn:** 2,772 of 5,000 customers (**55.44%**) churned; 2,228 (44.56%) did not.
+- **Spending:** churned customers account for about **63%** of total charges (95.64M vs 55.20M). Their average total spending is about **39% higher** (34,500.69 vs 24,776.61).
+- **Timing:** among churned customers, **Quarter 1** carries the highest total spending (about 39.16M), followed by Quarter 3 (about 30.85M). Quarter 4 is the lowest (about 8.40M).
+- **Tenure:** average tenure is nearly identical for churned (102.28 months) and non-churned (103.95 months) customers, so tenure alone does not explain churn.
+- **Year:** more customers churned than stayed in every signup year from 2015 to 2024, with no clear trend (roughly 240-280 churned customers per year).
+- **Internet service:** Fiber Optic is the largest group, and churn is high across all service types (roughly 53-56%), so service type alone is not a strong separator.
 
-- Overall churn rate and number of churned customers
-- Customer segments with comparatively higher churn
-- Relationships between contract type, tenure, charges, support calls, and churn
-- Findings that can be translated into customer-retention actions
-
-Do not add percentages or conclusions until they have been calculated and checked against the cleaned dataset.
 
 ## Business Recommendations
 
-Base recommendations on your actual findings. Potential actions to evaluate include:
+- Treat a churn rate above 50% as a priority and investigate causes with additional data (exit reasons, satisfaction, support history).
+- Focus retention offers on higher-spending customers, who make up most of the churned revenue.
+- Plan retention campaigns ahead of Quarter 1 and Quarter 3.
+- Look at other drivers next, such as contract type, payment method, support calls and satisfaction score.
 
-- Review onboarding and support for customer groups with higher churn.
-- Investigate whether contract type or payment experience is associated with churn.
-- Monitor satisfaction and support-call patterns alongside churn.
-- Track churn and retention KPIs over time to assess whether interventions help.
 
-These are analysis prompts, not conclusions; include only recommendations supported by your results.
+## Assumptions and Limitations
 
-## How to Reproduce the Analysis
-
-1. Obtain the dataset from its permitted source and place the privacy-safe file in the expected `data/` folder.
-2. Open the notebook in Jupyter Notebook or VS Code.
-3. Install the libraries imported in the notebook.
-4. Update the dataset path to match your local folder.
-5. Run the notebook cells in order.
-6. If SQL is included, load the relevant tables into PostgreSQL and run the documented queries.
-7. If a Power BI report is included, open the `.pbix` file in Power BI Desktop and update its data source path if required.
-
-Add a `requirements.txt` file if you want to document the exact Python dependencies.
-
-## Limitations
-
-- Results depend on the quality, scope, and licensing of the dataset used.
-- Invalid or unknown values may affect analysis if they are not handled consistently.
-- Associations between customer attributes and churn do not by themselves establish causation.
-- Remove or anonymize personal information before publishing project data.
+- Missing `Churn` values were filled as **Yes** when `SatisfactionScore` was below 5 and **No** otherwise. This is an assumption and affects the churn rate.
+- Missing ages were forward filled; rows with unreadable signup dates were kept and labelled **Unknown** for year, month and quarter.
+- This is descriptive analysis only. No predictive model was built, and the findings show association, not cause.
 
 ## Author
 
